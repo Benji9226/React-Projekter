@@ -1,0 +1,56 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C); /* Backgorund color is blue to the left and switches to green on the right */
+}
+
+.calculator-grid{
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75); /* .75 makes it transparent */
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgba(255, 255, 255, .9); /* made this so when i hover mouse over button it changes color */
+}
+
+.span-two{
+    grid-column: span 2; /* makes it so the buttons with this classname spans over 2 grid positions instead of 1*/
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75); /* .75 makes it transparent */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around; /* gives space around the numbers */
+    padding: .75rem; /* amount of space to the border */
+    word-wrap: break-word; /* makes it so if the number is long i breaks down to the next lign */
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75); /* .75 makes it transparent */
+    font-size: 1.5rem; /* size of font */
+}
+
+.output .current-operand {
+    color: white; /* color of text */
+    font-size: 2.5rem; /* size of font */
+}
